@@ -1,7 +1,6 @@
 ---
-theme :
-  name : the-program
 layout: default
 ---
-{% include JB/setup %}
-{% include themes/the-program/page.html %}
+
+{% assign lang = site.data.languages[site.language] %}
+{% include page.html %}

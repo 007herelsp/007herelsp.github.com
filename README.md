@@ -1,78 +1,84 @@
-# Jekyll-Bootstrap
+# Jekyll-Jacman
 
-The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
+**中文 | [English](/README_en.md)**
 
-## Usage
+Jekyll-Jacman 是为 [Jekyll](http://jekyllrb.com) 设计的一款清新且具有响应式的主题，拥有更丰富的特性并支持了很多的国内服务。Jacman 始于 [Hexo Jacman](https://github.com/wuchong/jacman) 移植而来。
 
-For all usage and documentation please see: <http://jekyllbootstrap.com>
+ * [主题演示](http://simpleyyt.github.io/jekyll-jacman/)
+ * [如何使用 Jacman 主题](http://simpleyyt.github.io/jekyll-jacman/jekyll/2015/09/20/how-to-use-jacman)
 
-## Version
+## 本地搭建
 
-0.3.0 - stable and versioned using [semantic versioning](http://semver.org/).
+确保已安装`Ruby 2.1.0` 或更高版本：
 
-**NOTE:** 0.3.0 introduces a new theme which is not backwards compatible in the sense it won't _look_ like the old version.
-However, the actual API has not changed at all.
-You might want to run 0.3.0 in a branch to make sure you are ok with the theme design changes.
+```sh
+ruby --version
+```
 
-## Milestones
+安装`Bundler`：
 
-[0.4.0](https://github.com/plusjade/jekyll-bootstrap/milestones/v%200.4.0) - next release [ETA 03/29/2015]
+```sh
+gem install bundler
+```
 
-### GOALS
+下载 Jacman 主题：
 
-* No open PRs against master branch.
-* Squash some bugs.
-* Add some new features (low-hanging fruit).
-* Establish social media presence.
+```sh
+git clone https://github.com/Simpleyyt/jekyll-jacman.git
+cd jekyll-jacman
+```
 
+安装依赖：
 
-### Bugs
+```sh
+bundle install
+```
 
-|Bug |Description
-|------|---------------
-|[#86](https://github.com/plusjade/jekyll-bootstrap/issues/86)  |&#x2611; Facebook Comments
-|[#113](https://github.com/plusjade/jekyll-bootstrap/issues/113)|&#x2611; ASSET_PATH w/ page & post
-|[#144](https://github.com/plusjade/jekyll-bootstrap/issues/144)|&#x2610; BASE_PATH w/ FQDN
-|[#227](https://github.com/plusjade/jekyll-bootstrap/issues/227)|&#x2611; Redundant JB/setup
+运行 Jekyll：
 
-### Features
+```sh
+bundle exec jekyll server
+```
 
-|Bug |Description
-|------|---------------
-|[#98](https://github.com/plusjade/jekyll-bootstrap/issues/98)  |&#x2611; GIST Integration
-|[#244](https://github.com/plusjade/jekyll-bootstrap/issues/244)|&#x2611; JB/file_exists Helper
-|[#42](https://github.com/plusjade/jekyll-bootstrap/issues/42)  |&#x2611; Sort collections of Pages / Posts
-|[#84](https://github.com/plusjade/jekyll-bootstrap/issues/84)  |&#x2610; Detecting production mode
+更多细节可以参考：[Setting up your GitHub Pages site locally with Jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
 
-### TODOS
+## 功能
 
-Review existing pull requests against plusjake/jekyll-bootstrap:master. Merge or close each.
+- **菜单 menu**  
+ 主导航菜单
+- **控件 widget**  
+ 侧边栏的控件。包括：Github 名片	、分类、标签、RSS、友情链接、微博秀。
+- **图片相关 Image**  
+ 设置网站图标、网站logo、作者头像、博客顶部大图等。还提供了多种图片样式`img-logo`,`img-topic`,`img-center`等。
+- **首页模式 index**  
+ 主题提供了两种首页展示模式。
+- **作者 author**  
+ 作者信息，主要用于展示网站右下角的社交网络链接。包括：微博、豆瓣、知乎、邮箱、GitHub、StackOverflow、Twitter、Facebook、Linkedin、Google+。
+- **目录 toc**  
+ 在文章中和侧边栏可以显示目录。
+- **评论 comments**  
+ 支持 [多说](http://duoshuo.com/) & [disqus](https://disqus.com/) 评论。
+- **分享 jiathis**  
+ 启用 内建分享工具 或 [加网](http://www.jiathis.com/) 分享系统。
+- **网站统计 Analytiscs**  
+ 支持 [谷歌统计](http://www.google.com/analytics/) & [百度统计](http://tongji.baidu.com/) & [CNZZ站长统计](http://www.cnzz.com/)。
+- **Search**  
+ 支持 [谷歌自定义搜索](https://www.google.com/cse/ ) & [百度站内搜索](http://zn.baidu.com/)  &[微搜索](http://tinysou.com/)。 &[Simple Jekyll Search](https://github.com/christian-fei/Simple-Jekyll-Search)
+- **totop**  
+ 回到顶部。
+- **rss**  
+ RSS 订阅链接。
+- **fancybox**  
+ 图片查看的 [Fancybox](http://fancyapps.com/fancybox/) 工具。
+- **其他**
+ 你可以设置侧边栏在博文页面中不显示。
 
-* Create twitter account. Add link / icon on jekyllbootstrap.com.
-* Create blog posts under plusjade/gh-pages, expose on jekyllbootstrap.com, feed to twitter account.
-* Announce state of project, announce roadmap(s), announce new versions as they’re released.
+## 协议
 
-## Contributing
+[MIT](/LICENSE)
 
+## 捐赠
 
-To contribute to the framework please make sure to checkout your branch based on `jb-development`!!
-This is very important as it allows me to accept your pull request without having to publish a public version release.
+支付宝捐赠链接还是要有的，万一真的有人捐呢。
 
-Small, atomic Features, bugs, etc.
-Use the `jb-development` branch but note it will likely change fast as pull requests are accepted.
-Please rebase as often as possible when working.
-Work on small, atomic features/bugs to avoid upstream commits affecting/breaking your development work.
-
-For Big Features or major API extensions/edits:
-This is the one case where I'll accept pull-requests based off the master branch.
-This allows you to work in isolation but it means I'll have to manually merge your work into the next public release.
-Translation : it might take a bit longer so please be patient! (but sincerely thank you).
-
-**Jekyll-Bootstrap Documentation Website.**
-
-The documentation website at <http://jekyllbootstrap.com> is maintained at https://github.com/plusjade/jekyllbootstrap.com
-
-
-## License
-
-[MIT](http://opensource.org/licenses/MIT)
+![支付宝扫码捐赠](http://p1.bpimg.com/567571/9a4a158daee8aa69.png)
