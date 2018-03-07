@@ -12,11 +12,11 @@
 #    `--'   `----''--'   '--' `--'
 
 ## Base settings ##
-# url:  #the base hostname & protocol for your site e.g. https://www.someone.com
+# url:  #the base hostname & protocol for your site e.g. https://www.007herelsp.com
 baseurl: /
-title: Someone's blog
+title: 007herelsp's blog
 description: > #this means to ignore newlines until "nav_lists:"
-  Someone's Blog
+  007herelsp's Blog
 
 nav_lists:
   - titles:
@@ -33,7 +33,7 @@ nav_lists:
 #   rss:  /feed.xml
 
 ## GitHub repository (if the site is hosted by GitHub) ##
-# repository:  #e.g. someone/someone.github.io
+# repository:  #e.g. 007herelsp/007herelsp.github.io
 # repository_tree:  #e.g. master
 
 ## Language & timezone ##
@@ -42,8 +42,8 @@ timezone: Asia/Shanghai #see https://en.wikipedia.org/wiki/List_of_tz_database_t
 
 ## Author & social ##
 author:
-  name: Someone
-  # email:  #your Email address e.g. someone@site.com
+  name: 007herelsp
+  # email:  #your Email address e.g. 007herelsp@site.com
   # facebook:  #your Facebook username
   # twitter:  #your Twitter username
   # github:  #your GitHub username
