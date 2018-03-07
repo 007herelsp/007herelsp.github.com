@@ -1,24 +1,26 @@
 ---
-layout: index
-title: index
+layout: blog_layout
 ---
 
-{% assign entries = site.entries | sort: "number" %}
-{% for entry in entries %}
-    {% if entry.title != 'index'%}
-        <section id="{{ entry.sectionid }}" class="{{ entry.sectionclass }}">
-            {% case entry.sectionclass %}
-                {% when 'h1' %}
-                    <h1>{{ entry.title }}</h1>
-                {% when 'h2' %}
-                    <h2>{{ entry.title }}</h2>
-                {% when 'h3' %}
-                    <h3>{{ entry.title }}</h3>
-                {% when 'h4' %}
-                    <h4>{{ entry.title }}</h4>
-            {% endcase %}
+{% for post in site.posts %}
+<article class="preview">
+    <header>
+        <h2 class="post-title">
+            <a href="{{ post.url }}">  {{ post.title }} </a>
+        </h2>
+        <p class="post-time"> {{ post.time }}</p>
+    </header>
+    <section class="post-section">
+        <p>
+            {{ post.excerpt }}
+        </p>
+        <p class="readmore">
+            <a href="{{ post.url }}">
+                阅读全文
+                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+            </a>
+        </p>
+    </section>
 
-            {{ entry.content }}
-        </section>
-    {% endif %}
+</article>
 {% endfor %}
