@@ -1,10 +1,15 @@
 language: ruby
 rvm:
-- 2.1
-
-install: gem install jekyll
-
-# branch whitelist
+  - 2.4.0
 branches:
   only:
-  - gh-pages     # test the gh-pages branch
+  - master
+script: bundle exec jekyll build --config ./_config.demo.yml
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: _site
+  on:
+    branch: master
+    target_branch: gh-pages
