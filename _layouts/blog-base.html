@@ -5,6 +5,8 @@
     {%- include common-head.html -%}
     {%- include head-icons-rel.html -%}
     {%- assign __path = '/assets/css/blog.css' -%}
+<link href="/assets/prism/prism.css" rel="stylesheet" />
+
     {%- include snippets/prepend-baseurl.html -%}
     <link rel="stylesheet" href="{{ __return }}">
     <style>
@@ -35,5 +37,7 @@
     {%- if site.isdebug == false -%}
       {%- include utils/google-analytics.html -%}
     {%- endif -%}
+
+   <script src="/assets/prism/prism.js"></script>  
   </body>
 </html>
