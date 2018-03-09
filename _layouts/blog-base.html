@@ -4,14 +4,9 @@
   <head>
     {%- include common-head.html -%}
     {%- include head-icons-rel.html -%}
-     <link rel="stylesheet" href="//cdn.staticfile.org/normalize/6.0.0/normalize.min.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_roc50gemkxpw4s4i.css">
-    <link rel="stylesheet" href="/assets/css/github-markdown.css">
-    <link rel="stylesheet" href="/assets/css/prism.css">
-    <link rel="stylesheet" href="/assets/css/app.min.css">
+    {%- assign __path = '/assets/css/blog.css' -%}
     {%- include snippets/prepend-baseurl.html -%}
     <link rel="stylesheet" href="{{ __return }}">
-     <link rel="stylesheet" href="/assets/prism/prism.css">
     <style>
     {%- if page.picture_frame == 'shadow' -%}
       .m-article-content img:not(.emoji) {
@@ -20,7 +15,6 @@
     {%- endif -%}
     </style>
     <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
-     <script src="/assets/prism/prism.js"></script>
   </head>
   <body>
     <div class="m-page-stage js-page-stage">{{ content }}</div>
