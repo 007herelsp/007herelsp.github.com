@@ -5,12 +5,6 @@
     {%- include common-head.html -%}
     {%- include head-icons-rel.html -%}
     {%- assign __path = '/assets/css/blog.css' -%}
-
- <link rel="stylesheet" href="{{site.url}}/assets/prism/prism.css">
-  
-    <script src="{{site.url}}/assets/prism/prism.js"></script>
-
-    
     {%- include snippets/prepend-baseurl.html -%}
     <link rel="stylesheet" href="{{ __return }}">
     <style>
@@ -26,12 +20,12 @@
     <div class="m-page-stage js-page-stage">{{ content }}</div>
     {%- include blog/footer.html -%}
     <script>
-    //  $(function() {
-    //    // display coding language
-    //    $(".highlight").each(function() {
-    //      $(this).attr("data-lang", $(this).find("code").attr("data-lang"));
-    //    });
-    //  });
+      $(function() {
+        // display coding language
+        $(".highlight").each(function() {
+          $(this).attr("data-lang", $(this).find("code").attr("data-lang"));
+        });
+      });
     </script>
     <script type="text/javascript">
   $('pre').addClass("line-numbers").css("white-space", "pre-wrap");
