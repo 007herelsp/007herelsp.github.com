@@ -1,14 +1,8 @@
 ---
-layout: blog-default
+layout: default
 ---
-<div class="m-page">
-  <article class="main">
-    {%- include snippets/page-title.html -%}
-    <h1>{{ __return }}</h1>
-    <div class="m-article-content" itemprop="articleBody">{{ content }}</div>
-    {%- if page.comment != false -%}
-      <section>{%- include utils/comment-disqus.html -%}</section>
-      <section>{%- include utils/comment-gitalk.html -%}</section>
-    {%- endif -%}
-  </article>
+
+<div class="page">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {{ content }}
 </div>
