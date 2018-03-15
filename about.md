@@ -1,13 +1,15 @@
 ---
 layout: page
-title: About
-permalink: /about/
+titles:
+  en: About
+  zh: 关于
+  zh-Hans: 关于
+  zh-Hant: 關於
+key: page-about
 ---
 
+Just say something about yourself. :+1:
 
-Thunder is a minimal responsive Jekyll theme which uses very less ``html`` and ``css`` code. The page-load is within a second. This Jekyll Theme is suitable for simple blogs.
-
-
-More themes available here: [**Jekyll Themes**](http://blog.webjeda.com/jekyll-themes/)
-
-
+{% highlight javascript %}
+  (() => console.log('hello, world!'))();
+{% endhighlight %}
