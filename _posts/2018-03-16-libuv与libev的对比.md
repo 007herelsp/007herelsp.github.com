@@ -7,7 +7,7 @@ tags: c/c++ libuv libev
 
 # libuv 与 libev 的对比
 
-[转载自 libuv 与 libev 的对比](http://blog.csdn.net/nanjunxiao/article/details/9066077)
+[转载加工自 http://blog.csdn.net/nanjunxiao/article/details/9066077](http://blog.csdn.net/nanjunxiao/article/details/9066077)
 ## 异步 VS 同步
 - libuv是异步的，libev是同步的多路IO复用。
 - libev 是系统IO复用的简单封装，基本上来说，它解决了 epoll ，kqueuq 与 select 之间 API 不同的问题。保证使用 livev 的 API 编写出的程序可以在大多数 *nix 平台上运行。但是libev 的缺点也是显而易见，由于基本只是封装了 Event Library，用起来有诸多不便。比如accept(3) 连接以后需要手动 setnonblocking 。从 socket 读写时需要检测 EAGAIN、EWOULDBLOCK 和 EINTER 。这也是大多数人认为异步程序难写的根本原因。
