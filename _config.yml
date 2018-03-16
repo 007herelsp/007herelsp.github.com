@@ -1,130 +1,56 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-#
-# ,--------.      ,--.   ,--. ,--.
-# '--.  .--',---.  \  `.'  /,-'  '-.
-#    |  |  | .-. :  .'    \ '-.  .-'
-#    |  |  \   --. /  .'.  \  |  |
-#    `--'   `----''--'   '--' `--'
+# Jekyll configuration
 
-text_color_theme: default #eg: default | dark | forest | ocean | chocolate | orange
-## Base settings ##
-# url:  #the base hostname & protocol for your site e.g. https://www.007herelsp.com
-baseurl: /
-title: 007herelsp's blog
-description: > #this means to ignore newlines until "nav_lists:"
-  007herelsp's Blog
+name: Blog Name
+description: Software Developer
 
-nav_lists:
-  - titles:
-      en: About
-      zh: 关于
-      zh-Hans: 关于
-      zh-Hant: 關於
-    url: /about.html
+# Url is currently only used only for the RSS feed in feed.xml
+url: http://streetturtle.github.io
+#url: http://localhost:4000
 
-# paths:
-#   base: /
-#   home: /
-#   all:  /all.html
-#   rss:  /feed.xml
+# For a project page here should be a project name. Otherwise (for user's/organization's page leave it empty)
+baseurl: ''
 
-## GitHub repository (if the site is hosted by GitHub) ##
-# repository:  #e.g. 007herelsp/007herelsp.github.io
-# repository_tree:  #e.g. master
+author: Pavel Makhov
+copyright: 2015-2017
 
-## Language & timezone ##
-lang: en #the language of your site, eg: en(English), zh(简体中文), zh-Hans(简体中文), zh-Hant(繁體中文)
-timezone: Asia/Shanghai #see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
+share:
+  facebook: true
+  twitter: true
+  gplus: true
+  linkedin: true
+  pinterest: true
+  email: true
 
-## Author & social ##
-author:
-  name: 007herelsp
-  # email:  #your Email address e.g. 007herelsp@site.com
-  # facebook:  #your Facebook username
-  # twitter:  #your Twitter username
-  github:  007herelsp #your GitHub username
-  # googleplus:  #your Google+ username
-  # weibo:  #your Weibo username
-  # douban:  #your Douban username
-  # linkedin:  #your Linkedin username
+social:
+  github: streetturtle
+  stackoverflow: ''
+  linkedin:
+  instagram: ''
+  lastfm: ''
+  rss: feed.xml
 
-## TOC
-toc:
-  # selectors: 'h1,h2,h3'
+# Google Analytics key, leave blank to ignore
+google_analytics_key:
+# Yandex metrica (https://metrica.yandex.com/) leave blank to ignore or put true to use
+yandex_metrica:
 
-## Comment system (Disqus) ##
-disqus:
-  # shortname:  #the Disqus shortname for the site
 
-## Comment system (gitalk) ##
-# please refer to https://github.com/gitalk/gitalk for more info.
-gitalk:
-  # clientID:  #Github Application Client ID
-  # clientSecret:  #Github Application Client Secret
-  # repository:  #Github repo
-  # owner:  #Github repo owner
-  # admin: #Github repo owner and collaborators, only these guys can initialize github issues, IT IS A LIST.
-    # - owner
+# Set this to your disqus shortname to enable comments. Note that the 'comments'
+# setting below must also be true. Individual posts can override 'comments' to
+# disable on a post-by-post basis
+disqus: streetturtle
+comments: false
 
-## Google Analytics ##
-# ga_tracking_id:  #Google analytics id for the site
+permalink: /:year/:month/:title
 
-## Reading quantity (LeanCloud) ##
-leancloud:
-  # app_id:  #LeanCloud App id
-  # app_key:  #LeanCloud App key
-  # app_class:  #LeanCloud App class
+# Enable for using pages, more details are here: http://jekyllrb.com/docs/pagination/
+#paginate: 3
 
-# mathjax: true
-# mathjax_autoNumber: true
-# mermaid: true
-# chart: true
+#highlighter: rouge
 
-## Paginate ##
-paginate: 7
-paginate_path: /blog/page:num
-
-## Post excerpts ##
-excerpt_separator: <!--more-->
-excerpt_type: html # text | html
-
-## Sources ##
-# sources: bootcss #eg: bootcss | unpkg
-
-## Build ##
 markdown: kramdown
-highlighter: rouge
-permalink: date
+kramdown:
+  input: GFM # Enable GitHub Flavored Markdown (fenced code blocks)
+  hard_wrap: true
 
-exclude:
-  - CHANGELOG.md
-  - CHECKLIST.md
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README-*.md
-  - README.md
-  - gulpfile.js
-  - jekyll-text-theme.gemspec
-  - package-lock.json
-  - package.json
-  - /docs
-  - /node_modules
-  - /screenshots
-  - /test
-  - /vendor
-
-## Plugins ##
-plugins:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate
-  - jemoji
-
-## Server ##
-server_url: "0.0.0.0"
+exclude: ['README.md', 'LICENSE']
