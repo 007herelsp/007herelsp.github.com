@@ -20,7 +20,7 @@ tags: c/c++ libuv libev
    > 当接口可读时，libuv 会调用你的 allocate callback 来申请内存并将读到的内容写入。当读取完毕后，libuv 会 call 你为这个 socket 设置的回调函数，在参数中带着这个 buffer 的信息。你只需要负责处理这个 buffer 并且 free 掉就OK了。因为是从 buffer 中读取数据，在你的 callback 被调用时数据已经 ready 了，所以程序员也就不用考虑阻塞的问题了。
 
     > 而对写的处理则更显巧妙。libuv 没有 write callback ，如果你想写东西，直接 generate 一个 write request 连着要写的 buffer 一起丢给 libuv ，libuv 会把你的 write request 加进相应 socket 的 write queue ，在 I/O 可写时按顺序写入。
-
+    >
 ## 读写上下文处理
 - C 没有闭包，所以确定读写上下文是 libuv 的使用者需要面对的问题。否则程序面对汹涌而来的 buffer 也不能分得清哪个是哪个的数据。在这一点的处理上，libuv 跟 libev 一样，都是使用了一个 void *data 来解决问题。你可以用 data 这个 member 存储任何东西，这样当 buffer 来的时候，只需要简单的把 data cast 到你需要的类型就 OK 了。
 
