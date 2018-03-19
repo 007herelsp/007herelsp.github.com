@@ -15,9 +15,9 @@ text_color_theme: default #eg: default | dark | forest | ocean | chocolate | ora
 ## Base settings ##
 # url:  #the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl: /
-title: Someone's blog
+title: 007herelsp's blog
 description: > #this means to ignore newlines until "nav_lists:"
-  Someone's Blog
+  007herelsp's Blog
 
 nav_lists:
   - titles:
@@ -43,11 +43,11 @@ timezone: Asia/Shanghai #see https://en.wikipedia.org/wiki/List_of_tz_database_t
 
 ## Author & social ##
 author:
-  name: Someone
-  # email:  #your Email address e.g. someone@site.com
+  name: 007herelsp
+  email:  386859647@qq.com #your Email address e.g. someone@site.com
   # facebook:  #your Facebook username
   # twitter:  #your Twitter username
-  # github:  #your GitHub username
+  github:  007herelsp #your GitHub username
   # googleplus:  #your Google+ username
   # weibo:  #your Weibo username
   # douban:  #your Douban username
@@ -91,7 +91,7 @@ paginate_path: /blog/page:num
 
 ## Post excerpts ##
 excerpt_separator: <!--more-->
-excerpt_type: text # text | html
+excerpt_type: html # text | html
 
 ## Sources ##
 # sources: bootcss #eg: bootcss | unpkg
