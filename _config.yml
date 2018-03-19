@@ -93,6 +93,14 @@ paginate_path: /blog/page:num
 excerpt_separator: <!--more-->
 excerpt_type: html # text | html
 
+share:
+facebook: true
+twitter: true
+gplus: true
+linkedin: true
+pinterest: true
+email: true
+
 ## Sources ##
 # sources: bootcss #eg: bootcss | unpkg
 
