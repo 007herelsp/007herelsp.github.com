@@ -129,6 +129,7 @@ a {
 
 pre, code {
   font-family: map-get($base, code-font-family);
+  white-space: pre-wrap;  
 }
 
 code {
