@@ -78,7 +78,7 @@ gitalk:
 leancloud:
    app_id: RyMpl3U2lzrsjG1QCAVoXsRY-gzGzoHsz #LeanCloud App id
    app_key: uz3cyFllhCwrbQMJ53eIUPit #LeanCloud App key
-   app_class:  t37MidAJqzyxualPhmFBRXfL #LeanCloud App class
+   app_class:  blogscount #LeanCloud App class
 
 # mathjax: true
 # mathjax_autoNumber: true
