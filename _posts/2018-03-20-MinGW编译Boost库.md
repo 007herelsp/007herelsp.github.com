@@ -47,7 +47,7 @@ Further information:
 .\b2.exe install toolset=gcc --prefix=c:\Boost # --prefix 为类库生成地址, 不指定路径则安装在c:\boost. 可以指定参数 --with-XXX 编译指定模块, 否则全部编译
 等待完成. 速度快的话大概半个小时.
 ```
-b2 -q	-j4	toolset=gcc    link=shared	threading=multi	--layout=versioned	--without-python	--prefix="c://Boost" 
+b2 -j4	toolset=gcc    link=shared	threading=multi	--layout=versioned	--without-python	--prefix="c://Boost"  --build-type=complete install
 ```
 
 ## CMakeLists.txt
