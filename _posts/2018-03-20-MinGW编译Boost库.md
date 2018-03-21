@@ -2,8 +2,7 @@
 layout: post
 title: MinGW编译boost库
 key: 20180321
-tags:
-  - MinGW BOOST
+tags: MinGW BOOST
 lang: zh
 share: true <-- here
 ---
@@ -11,7 +10,7 @@ share: true <-- here
 # MinGW编译boost库
 
 ## 介绍
-在windows下编译boost可以选择msvc和mingw两种方式，这里介绍使用mingw方式编译
+在windows下编译boost可以选择msvc和mingw两种方式，这里介绍使用mingw方式编译,msvc也是类似的操作
 ## 编译
 ### 编译 b2.exe
 进入boost的目录，运行bootstrap.bat,成功后会生成b2.exe
