@@ -11,6 +11,12 @@ share: true <-- here
 
 ## 介绍
 在windows下编译boost可以选择msvc和mingw两种方式，这里介绍使用mingw方式编译,msvc也是类似的操作
+
+## 源码下载
+例如1.48.0
+http://www.boost.org/users/history/version_1_48_0.html
+使用不同的版本时将version_1_48_0替换即可
+
 ## 编译
 ### 编译 b2.exe
 进入boost的目录，运行bootstrap.bat,成功后会生成b2.exe
