@@ -1,3 +1,10 @@
+---
+layout: post
+title: "两种高性能 I/O 设计模式 Reactor 和 Proactor"
+date: 2016-07-01 16:25:06
+tags: I/O 设计模式 Reactor Proactor
+description: 两种高性能 I/O 设计模式 Reactor 和 Proactor
+---
 # 两种高性能 I/O 设计模式 Reactor 和 Proactor
 [转载整理自 http://www.cnblogs.com/daoluanxiaozi/p/3274925.html](http://www.cnblogs.com/daoluanxiaozi/p/3274925.html)
 
