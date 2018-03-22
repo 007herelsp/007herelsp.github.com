@@ -1,12 +1,13 @@
 ---
 layout: post
 title: "两种高性能 I/O 设计模式 Reactor 和 Proactor"
-date: 2016-07-01 16:25:06
+date: 2018-03-22 09:34:06
 tags: I/O 设计模式 Reactor Proactor
+key: 20180322
 description: 两种高性能 I/O 设计模式 Reactor 和 Proactor
 ---
 # 两种高性能 I/O 设计模式 Reactor 和 Proactor
-[转载整理自 http://www.cnblogs.com/daoluanxiaozi/p/3274925.html](http://www.cnblogs.com/daoluanxiaozi/p/3274925.html)
+[转载整理自 两种高性能 I/O 设计模式 Reactor 和 Proactor http://www.cnblogs.com/daoluanxiaozi/p/3274925.html](http://www.cnblogs.com/daoluanxiaozi/p/3274925.html)
 
 *Reactor 和 Proactor 是基于事件驱动，在网络编程中经常用到两种设计模式。*
 
@@ -45,13 +46,13 @@ event_dispatch();
 
 从上面 Reactor 模式中，发现服务端数据的接收和发送都占用了用户状态（还有一种内核态），这样服务器的处理操作就在数据的读写上阻塞花费了时间，节省这些时间的办法是借助操作系统的异步读写；异步读写在调用的时候可以传递回调函数或者回送信号，当异步操作完毕，内核会自动调用回调函数或者发送信号。Proactor 就是这么做的，所以很依赖操作系统。来一幅 UML：
 
-proactor_uml
+![proactor_uml](/assets/images/proactor_uml.png)
 
 和时序图：
 
-proactor_timing_diagram
+![proactor_timing_diagram](/assets/images/proactor_timing_diagram.png)
 
-注：这两幅美艳的图片来自 Proactor.doc，下面会提到.
+*注：这两幅美艳的图片来自 Proactor.doc，下面会提到.*
 
 Proactor 的实现主要有三个部分：异步操作处理器，Proactor 和 事件处理函数。其中：
 
@@ -60,27 +61,27 @@ Proactor 的实现主要有三个部分：异步操作处理器，Proactor 和 �
 - 事件处理函数，事件触发，执行操作；
 曾经看过 Proactor.doc，作者是 Douglas C. Schmidt，你可以在这里阅读此文档。里面的关于 Proactor 的讲解很精彩，部分摘抄和自己的理解如下：当连接 web 服务器时：
 
-proactor_web_connect
+![proactor_web_connect](/assets/images/proactor_web_connect.png)
 
-web 服务器指定（1）接收器，此接收器相当于服务器的客户端，它可以启动异步的 accept 操作；
-接收器调用操作系统上的异步接收操作（2），并传递自己和 Proactor 的引用；异步接收操作结束后，前者用作事件处理函数，后者会回过头来分发事件；注：传递 Proactor 是为了让操作系统通知正确的 Proactor，可能会存在多个 Proactor；传递接收器自己是为了在异步接收操作结束后 Proactor 能调用正确的事件处理函数，以下同理。
-web 服务器调用 Proactor 的事件循环；（3）
-web 浏览器连接 web 服务器；（4）
-异步接收操作结束后，操作系统产生事件（通过回调或者信号）并通知 Proactor（5），Proactor 收到后会调用相应的事件处理函数，即交由接收器处理；（6）
-接收器生成 HTTP 处理器，执行操作；（7）
-HTTP 处理器解析事件，启动异步读操作（8），获取来自浏览器的 GET 请求。同样，HTTP 处理器传递自己和 Proactor 的引用；
-web 服务器的控制权交还回 Proactor 的事件循环。（9）
+- web 服务器指定（1）接收器，此接收器相当于服务器的客户端，它可以启动异步的 accept 操作；
+- 接收器调用操作系统上的异步接收操作（2），并传递自己和 Proactor 的引用；异步接收操作结束后，前者用作事件处理函数，后者会回过头来分发事件；注：传递 Proactor 是为了让操作系统通知正确的 Proactor，可能会存在多个 Proactor；传递接收器自己是为了在异步接收操作结束后 Proactor 能调用正确的事件处理函数，以下同理。
+- web 服务器调用 Proactor 的事件循环；（3）
+- web 浏览器连接 web 服务器；（4）
+- 异步接收操作结束后，操作系统产生事件（通过回调或者信号）并通知 Proactor（5），Proactor 收到后会调用相应的事件处理函数，即交由接收器处理；（6）
+- 接收器生成 HTTP 处理器，执行操作；（7）
+- HTTP 处理器解析事件，启动异步读操作（8），获取来自浏览器的 GET 请求。同样，HTTP 处理器传递自己和 Proactor 的引用；
+- web 服务器的控制权交还回 Proactor 的事件循环。（9）
 接收 GET 请求过后，会处理数据：
 
-proactor_web_service
+![proactor_web_service](/assets/images/proactor_web_service.png)
 
-浏览器发送（1）一个 HTTP GET 请求；
-异步读操作结束后，操作系统会通知 Proactor，Proactor 分发给事件处理函数；（2，3）
-事件处理器解析请求。（4）2-4 步骤会重复，指导所有的数据都接收为止；
-事件处理器产生答复数据；（5）
-HTTP 处理器启动异步写操作（6），传输应答数据，同样的这里还会传递处理器自己和 Proactor；
-异步写操作结束，操作系统通知 Proactor（7），Proactor 分发给事件处理函数（8）。6-8 步骤会重复直到所有的数据写完为止。至此，一个请求回复完成。
-总结
+- 浏览器发送（1）一个 HTTP GET 请求；
+- 异步读操作结束后，操作系统会通知 Proactor，Proactor 分发给事件处理函数；（2，3）
+- 事件处理器解析请求。（4）2-4 步骤会重复，指导所有的数据都接收为止；
+- 事件处理器产生答复数据；（5）
+- HTTP 处理器启动异步写操作（6），传输应答数据，同样的这里还会传递处理器自己和 Proactor；
+- 异步写操作结束，操作系统通知 Proactor（7），Proactor 分发给事件处理函数（8）。6-8 步骤会重复直到所有的数据写完为止。至此，一个请求回复完成。
+## 总结
 
 相比网络编程中最简单的思路模式：bind,listen,accept,read,server operator,write，Reactor 和 Proactor 是两种高性能的设计模式，掌握此两种模式，有助于理解一些网络库的工作流程。此文提到了两种设计模式，但没有一些技术细节，譬如多线程同步。如果在 Reactor 中支持多线程，或多个线程共享一个 Proactor，线程的同步问题就来了。共享一篇印象笔记关于线程的综合讨论：这里.
 
@@ -88,7 +89,7 @@ HTTP 处理器启动异步写操作（6），传输应答数据，同样的这�
 
 最后，实践出真知。欢迎讨论。
 
-参考：
+## 参考：
 
 - Proactor.pdf，http://www.laputan.org/pub/sag/proactor.pdf
 
@@ -97,9 +98,3 @@ HTTP 处理器启动异步写操作（6），传输应答数据，同样的这�
 - 《libevent源码深度剖析》，http://blog.csdn.net/sparkliang/article/details/4957667
 
 - 《 IO - 同步，异步，阻塞，非阻塞 （亡羊补牢篇）》，http://blog.csdn.net/historyasamirror/article/details/5778378
-
-捣乱 2013-08-21
-
-http://daoluan.net
-
-更多请访问：http://daoluan.net
