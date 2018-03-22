@@ -15,7 +15,7 @@ description: 两种高性能 I/O 设计模式 Reactor 和 Proactor
 ## Reactor
 
 Reactor，即反应堆。Reactor 的一般工作过程是首先在 Reactor 中注册（Reactor）感兴趣事件，并在注册时候指定某个已定义的回调函数（callback）；当客户端发送请求时，在 Reactor 中会触发刚才注册的事件，并调用对应的处理函数。在这一个处理回调函数中，一般会有数据接收、处理、回复请求等操作。
-![reactor_pattern](./images/reactor_pattern.png)
+![reactor_pattern](/assets/images/reactor_pattern.png)
 
 
 libevent 采用的就是 Reactor 的设计思想。其 Reactor 的中心思想是众所周知的 I/O 多路复用：select,poll,epoll,kqueue 等.libevent 精彩的将定时事件，信号处理，I/O 事件结合在在一起，也就是说用户同时在 Reactor 中注册上述三类事件。遗憾的是，libevent 不支持多线程，也就是说它同步处理请求，导致不能处理大量的请求；这样并不是说 Reactor 实现的网络库都不支持多线程，而是 libevent 本身的原因，我们也可以通过修改让 ilbevent 支持多线程，并发处理多个请求。
