@@ -50,26 +50,34 @@ description: 本文教你如何在windows环境下使用CMake和mingw搭建同li
 ### 确认CMake安装
 验证CMake是否成功安装，可以调出CMD窗口，输入`cmake`，瞧瞧系统会给你说什么，如果出现如下窗口，那么恭喜你没有任何问题。
 ![CMake安装好 ](https://upload-images.jianshu.io/upload_images/4938916-63fc0b883d5d7970.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 那么万一出现的是如下内容呢
+
 ![CMake没安装好](https://upload-images.jianshu.io/upload_images/4938916-61e292f409a36952.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 我们一般有如下处理步骤和处理方法：
 * 1. 确认是新调出CMD窗口再进行的操作
 * 2. 我们可以手动修改系统的环境变量指定CMake的bin目录位置
+
 ![系统环境变量 Path](https://upload-images.jianshu.io/upload_images/4938916-cd4618df2662ed20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 确认如图所示内容在Path中配置，如果没有可以手动输入并确定
+
 * 3. 待2操作完成后可以再验证，如果解决那么恭喜，如果问题仍存在，那么需要重启系统（一般都能解决了，除非比较低的系统版本可能需要重启）
 
 
 ## mingw
 ### mingw 下载
 这里给出64系统使用的mingw, https://sourceforge.net/projects/mingw-w64/
+
 ![mingw下载完成](https://upload-images.jianshu.io/upload_images/4938916-e1b2e4fb22c7b05b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 这里其实是下载的一个安装器，具体的安装是通过运行这个安装器来引导安装的
 
 ### mingw 安装
 ![开始运行安装器](https://upload-images.jianshu.io/upload_images/4938916-c74924e17d0399fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ### mingw 安装选项
 ![安装选项](https://upload-images.jianshu.io/upload_images/4938916-7eabb5f28f9f3b06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 这里需要做出对应的选择，当然完全默认没有任何问题，我们这里采用默认，继续安装
 ### mingw 安装位置
 ![安装位置选择](https://upload-images.jianshu.io/upload_images/4938916-81c3b5084fc69ae9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
