@@ -100,6 +100,7 @@ description: 本文教你如何在windows环境下使用CMake和mingw搭建同li
 我们安装完环境后来个实例运行下吧
 * 编写源码文件
 来个宇宙最著名的程序吧
+
 ```
 #include <stdio.h>
 
@@ -110,7 +111,9 @@ int main()
 	return 0;
 }
 ```
+
 * 编写CMake文件
+
 ```
 cmake_minimum_required(VERSION 3.0)
 project(Hello)
@@ -118,6 +121,7 @@ set(SOURCE main.cpp)
 add_executable(${PROJECT_NAME} ${SOURCE})
 
 ```
+
 * 生成Make file
 
 ```
@@ -125,7 +129,9 @@ mkdir build
 cd build
 cmake -G"Unix Makefiles" ../
 ```
+
 很不幸，这一步会出问题
+
 ```
 CMake Error: CMake was unable to find a build program corresponding to "Unix Makefiles".  CMAKE_MAKE_PROGRAM is not set.  You probably need to select a different build tool.
 CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
@@ -134,10 +140,14 @@ CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
 See also "D:/tmp/build/CMakeFiles/CMakeOutput.log".
 
 ```
+
 意思就是不能生成Unix Makefiles，这是缺少make程序造成的，
 解决方法就是找到mingw安装目录下mingw32-make.exe拷贝一份并重命名为make.exe
+
 ![make](https://upload-images.jianshu.io/upload_images/4938916-65e8b10f721b725f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 再运行`cmake -G"Unix Makefiles" ../`
+
 ```
 $ cmake -G"Unix Makefiles" ../
 -- The C compiler identification is GNU 7.2.0
@@ -159,13 +169,16 @@ $ cmake -G"Unix Makefiles" ../
 -- Build files have been written to: D:/tmp/build
 
 ```
+
 这样就对了
 * 编译
+
 ```
 make
 ```
 
 什么，又有问题
+
 ```
 $ make
 /usr/bin/sh: -c: line 0: syntax error near unexpected token `('
@@ -173,6 +186,7 @@ $ make
 make: *** [Makefile:84: all] Error 1
 
 ```
+
 还记得前面我们安装mingw时说的坑吗，现在我们需要填坑了，文件就是万恶的`C:/Program Files (x86)`，这也好办，将`mingw-w64`文件夹复制到一个正常的目录吧，比如直接`C:/mingw-w64`，然后需要修改环境变量
 ![修改mingw环境变量](https://upload-images.jianshu.io/upload_images/4938916-f694a58c71443330.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -184,10 +198,13 @@ Scanning dependencies of target Hello
 [100%] Built target Hello
 
 ```
+
 * 运行
+
 ```
 $ ./Hello.exe
 hello
 ```
+
 好了，终于成功了
 
