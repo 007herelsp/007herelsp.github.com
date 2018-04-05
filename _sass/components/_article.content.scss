@@ -60,6 +60,16 @@
     /* margin:0 0;  */ /*图片水平居左，如需要请打开*/
     max-width:100%;
   }
+
+  figcaption/*图片描述文字*/
+{
+  margin-top:10px;
+  text-align:center;
+   /* text-align:left;  */ /*当图片水平居左时，请打开*/
+  color:#999;
+  font-size: 0.7em;
+}
+
   img:not(.emoji) {
     max-width: 100%;
     vertical-align: middle;
