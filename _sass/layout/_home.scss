@@ -44,7 +44,19 @@
     }
     h3 {
       font-size: map-get($base, font-size-h3-excerpt);
+      border-bottom:2px  solid   #00ACC1;
     }
+    h3 span{/*增加对h3标题字体的修改*/
+  display:inline-block;
+  font-weight:normal;
+  background: #00ACC1;
+  color:#ffffff;
+  padding:3px 10px 0px;
+  border-top-right-radius: 3px; 
+  border-top-left-radius: 4px; 
+  margin-left:5px;
+  margin-right:2px;
+}
     h4 {
       font-size: map-get($base, font-size-h4-excerpt);
     }
