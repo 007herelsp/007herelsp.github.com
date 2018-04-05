@@ -34,10 +34,6 @@
   img.rounded, .rounded > img {
     border-radius: map-get($shape, round-rect-radius);
   }
-  //margin
-  img.margin, .margin >img{
-    margin:0 auto; 
-  } 
 
   img.circle, .circle > img {
     border-radius: 50%;
