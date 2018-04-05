@@ -188,8 +188,6 @@
   table {
     display: block;
     width: 100%;
-	word-wrap:break-word; 
-	word-break:break-all;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     border-collapse: collapse;
@@ -199,8 +197,6 @@
     th, td {
       border: 1px solid $border-color-l;
       padding: .5rem;
-	  border-right:1px solid #000000;
-	  border-bottom:1px solid #000000;
     }
     th {
       font-weight: map-get($base, font-weight-bold);
