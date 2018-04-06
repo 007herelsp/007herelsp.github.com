@@ -135,6 +135,22 @@ li{  /*在公众号下，改变不了li符号的属性（如颜色），并会�
    word-spacing:-3px; 
    letter-spacing:0px; 
 }
+pre {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  &>code {
+    padding: 0;
+    background-color: transparent;
+    word-wrap: normal;
+    &.language-mermaid, &.language-chart {
+      display: none;
+      &[data-processed] {
+        display: block;
+      }
+    }
+  }
+}
+
 pre code /*代码块*/
 {           
      font-family: Consolas, Inconsolata, Courier, monospace;
@@ -156,10 +172,15 @@ blockquote { /*引用块*/
   overflow-scrolling: touch; 
   word-wrap: normal;
   word-break: normal;  
-}
-blockquote p {
+
+  p {
     margin: 0px;
+  }
+  &>:last-child {
+    margin-bottom: 0;
+  }
 }
+ 
 
 a { /*超链接*/
   text-decoration: none;
