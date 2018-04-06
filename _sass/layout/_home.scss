@@ -15,50 +15,50 @@
       @include split-line(bottom);
     }
   }
-  .m-article-content {
-    font-size: map-get($base, font-size-sub);
-    line-height: map-get($base, line-height);
-    @include block-elements() {
-      margin-top: map-get($base, vertical-space);
-      margin-bottom: map-get($base, vertical-space);
-    }
-    @include heading-elements() {
-      margin-top: map-get($base, vertical-space) * 1.5;
-    }
+  // .m-article-content {
+  //   font-size: map-get($base, font-size-sub);
+  //   line-height: map-get($base, line-height);
+  //   @include block-elements() {
+  //     margin-top: map-get($base, vertical-space);
+  //     margin-bottom: map-get($base, vertical-space);
+  //   }
+  //   @include heading-elements() {
+  //     margin-top: map-get($base, vertical-space) * 1.5;
+  //   }
 
-    h1,
-    h2,
-    h3 {
-      color: $text-color;
-    }
-    h1,
-    h2 {
-      padding: 0;
-      border: none;
-    }
-    h1 {
-      font-size: map-get($base, font-size-h1-excerpt);
-    }
-    h2 {
-      font-size: map-get($base, font-size-h2-excerpt);
-    }
-    h3 {
-      font-size: map-get($base, font-size-h3-excerpt);
-    }
-    h4 {
-      font-size: map-get($base, font-size-h4-excerpt);
-    }
-    h5 {
-      font-size: map-get($base, font-size-h5-excerpt);
-    }
-    h6 {
-      font-size: map-get($base, font-size-h6-excerpt);
-    }
-    img {
-      display: block;
-      margin:0 auto;  /*图片水平居中*/
-      /* margin:0 0;  */ /*图片水平居左，如需要请打开*/
-      max-width:100%;
-    }
-  }
+  //   h1,
+  //   h2,
+  //   h3 {
+  //     color: $text-color;
+  //   }
+  //   h1,
+  //   h2 {
+  //     padding: 0;
+  //     border: none;
+  //   }
+  //   h1 {
+  //     font-size: map-get($base, font-size-h1-excerpt);
+  //   }
+  //   h2 {
+  //     font-size: map-get($base, font-size-h2-excerpt);
+  //   }
+  //   h3 {
+  //     font-size: map-get($base, font-size-h3-excerpt);
+  //   }
+  //   h4 {
+  //     font-size: map-get($base, font-size-h4-excerpt);
+  //   }
+  //   h5 {
+  //     font-size: map-get($base, font-size-h5-excerpt);
+  //   }
+  //   h6 {
+  //     font-size: map-get($base, font-size-h6-excerpt);
+  //   }
+  //   img {
+  //     display: block;
+  //     margin:0 auto;  /*图片水平居中*/
+  //     /* margin:0 0;  */ /*图片水平居左，如需要请打开*/
+  //     max-width:100%;
+  //   }
+  // }
 }
