@@ -136,6 +136,8 @@ li{  /*在公众号下，改变不了li符号的属性（如颜色），并会�
    letter-spacing:0px; 
 }
 pre {
+  font-family: Consolas, Inconsolata, Courier, monospace;
+  border-radius: 0px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   &>code {
@@ -151,11 +153,11 @@ pre {
   }
 }
 
-pre code /*代码块*/
-{           
-     font-family: Consolas, Inconsolata, Courier, monospace;
-     border-radius: 0px;
-}
+// pre code /*代码块*/
+// {           
+//      font-family: Consolas, Inconsolata, Courier, monospace;
+//      border-radius: 0px;
+// }
 blockquote { /*引用块*/
   display: block;
   padding: 15px 1rem;
