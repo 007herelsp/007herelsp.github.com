@@ -588,15 +588,8 @@
      background-image: linear-gradient(90deg, rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%), linear-gradient(360deg,rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%);
      background-size: 20px 20px;
      background-position: center center;
-}
-.m-article-content *
-{
-  font-size: inherit  ;
-  color: inherit;
-  line-height: inherit;
-  margin:0px;
-  padding:0px;
-}
+
+
 
 p {/*段落*/
   margin: 1.7em 0px;/*更改默认的段落距离*/
@@ -906,4 +899,5 @@ a[href^="#"] sup
 .toc_left
 {/*每级目录的缩进*/
   margin-left:25px;
+}
 }
