@@ -322,13 +322,13 @@ h3 span{/*增加对h3标题字体的修改*/
   border-top-left-radius: 3px; 
   margin-right:3px;
 }
-h3:after{/*增加对h3标题后面的修饰*/
-  display: inline-block; 
-  content:" "; 
-  vertical-align: bottom;
-  border-bottom: 36px solid #EFEBE9;
-  border-right: 20px solid transparent;  
-}
+// h3:after{/*增加对h3标题后面的修饰*/
+//   display: inline-block; 
+//   content:" "; 
+//   vertical-align: bottom;
+//   border-bottom: 36px solid #EFEBE9;
+//   border-right: 20px solid transparent;  
+// }
 
 
 ul, ol {
