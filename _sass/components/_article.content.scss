@@ -312,7 +312,7 @@ h3{/*增加对h3标题的修改*/
    border-bottom:2px  solid   rgb(239,112,96);
    font-size: 1.3em;
 }
-h3 span{/*增加对h3标题字体的修改*/
+h3:span{/*增加对h3标题字体的修改*/
   display:inline-block;
   font-weight:normal;
   background:rgb(239,112,96);
