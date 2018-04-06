@@ -10,7 +10,7 @@
   background-image: linear-gradient(90deg, rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%), linear-gradient(360deg,rgba(50, 0, 0, 0.05) 3%, rgba(0, 0, 0, 0) 3%);
   background-size: 20px 20px;
   background-position: center center;
-  word-wrap: break-word;
+  word-wrap: normal; //break-word;
   line-height: map-get($base, line-height-large);
   @include block-elements() {
     margin: map-get($base, vertical-space-large) 0;
@@ -108,6 +108,8 @@
     -webkit-overflow-scrolling: touch;
     &>code {
       padding: 0;
+      font-family: Consolas, Inconsolata, Courier, monospace;
+      border-radius: 0px;
       background-color: transparent;
       word-wrap: normal;
       &.language-mermaid, &.language-chart {
