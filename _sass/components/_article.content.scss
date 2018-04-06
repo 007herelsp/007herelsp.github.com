@@ -81,6 +81,14 @@ h2 span{/*增加对h2标题字体的修改*/
 h3{/*增加对h3标题的修改*/
    border-bottom:2px  solid   rgb(239,112,96);
    font-size: 1.3em;
+   display:inline-block;
+   font-weight:normal;
+   background:rgb(239,112,96);
+   color:#ffffff;
+   padding:3px 10px 1px;
+   border-top-right-radius: 3px; 
+   border-top-left-radius: 3px; 
+   margin-right:3px;
 }
 h3 span{/*增加对h3标题字体的修改*/
   display:inline-block;
