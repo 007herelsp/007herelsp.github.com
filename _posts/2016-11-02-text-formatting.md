@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Text formatting"
 date: 2016-11-02 16:25:06
 tags: jekyll

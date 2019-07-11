@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "TCP/IP——何时用UDP代替TCP"
 date: 2018-04-10 22:05:06
 tags: TCP/IP UDP TCP

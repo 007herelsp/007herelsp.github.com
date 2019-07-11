@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Code snippets"
 date: 2016-10-01 16:25:06
 tags: code jekyll

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: libuv 与 libev 的对比
 key: 20180316
 tags: c/c++ libuv libev

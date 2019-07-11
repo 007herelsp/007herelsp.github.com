@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Installation"
 date: 2015-11-01 16:25:06
 description: Here you'll find out how to install this theme

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "windows+CMake+mingw 搭建c c++开发环境"
 date: 2018-03-30 22:23:06
 tags: windows CMake mingw c/c++

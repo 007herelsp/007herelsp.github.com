@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "Jekyll Dark Clean Theme"
 date: 2016-12-01 16:25:06
 tags: jekyll

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 title: "两种高性能 I/O 设计模式 Reactor 和 Proactor"
 date: 2018-03-22 09:34:06
 tags: I/O 设计模式 Reactor Proactor
